@@ -2,7 +2,7 @@
 
 ## 1. Introduction
 
-Ce document présente le plan de test de l'appication Orange HRM.
+Ce document présente le plan de test de l'appication Orange HRM, réalisé dans le cadre d'un projet menée par une équipe de 4 personnes.
 
 ## Contexte
 
@@ -10,27 +10,44 @@ Orange HRM est une application web de gestion de ressources humaine. Elle permet
 
 ## Objectif
 
-L'objectif de ce document est de définir une stratégie de test associée à des cas de test dont le but est de garantir la qualité fonctionnelle de l'application.
+L'objectif est dans un premier temps de définir les fonctionnalités qui devront être testé. Ensuite, une analyse des risques permettra de mettre en évidence les zones critiques. Cette étape aide à prioriser les efforts de tests en se focalisant sur ce qui a les plus de valeur. Ensuite, nous passerons à la conception des cas de test dont le but est de traduire les besoins et les risques en scénarions concrets tout en garantissants une traçabilité avec les exigences prévues initialement.
 
-## Périmètre
+## Organisation de l'équipe
 
-Les fonctionnalités qui seront testées :
+- 1 dev
+- 1 QA
+- 1 product Owner
+- 1 personne support
 
-- Authentification
-- Gestion des employés
-- Changement de mot de passe
-- Déconnexion
+## Périmètre de test
+
+Le module Authentification et gestion de session : ce module couvre la connexion à l’application, la déconnexion et le changement de mot de passe. il conditionne l'accès à toute l'application. Une defaillance à ce niveau pourrait compromettre la sécurité globale ou empêcher les utilisateurs concernées d'y accéder.
+
+Le module de gestion des employés (fonctionnalité principale): doit être testé de façon car il permet la création , la modification(..) des informations liées aux employés afin de garantir la fiabilité des données et le bon fonctionnement de l'application web.
+
+## Hors Périmètre
+
+Les tests de performances, de sécurité avancées et les tests API ne sont pas prioritaire dans ce projet. Ils pourront cepandant être réalisés dans une phase ultérieure car le projet est limité en temps et ressources, l'obectif est principalement dans un premier temps de valider les fonctionnalités qui seront viibles par l'utilisateur et enfin les tests fonctionnels couvrent les cas critiques du métier (fonctionnalités essentielles).
+
+## User Stories
+
+Lien vers le tableau des US :
+https://docs.google.com/spreadsheets/d/1NkOJtQMJezCimVeCaV2viQrUbwivRU5jVwj4Epe5khI
 
 ## 2.La stratégie de test
 
 ### 2.1 Les types de tests
 
+Nous aurons recours aux tests fonctionnels dans un premeier temps car ils permettront de verifier le bon fonctionnement des fonctionnalités principales de l'application (notamment l'authentification, le changement de mot de passe, la déconnexion et la gestion des employés). Dans un second temps, des tests automatisés pour gagner du temps sur certains test répétitifs (connexion...)
+
 ### 2.2 Les Niveaux de test
+
+Nous ferons des tests systèmes qui consisteront à tester l'application comme un utilisateur final.
 
 ### 2.3 L'Environnement de Test
 
 Navigateur : Google Chrome
-OS : MAC/ LINUX
+OS : MAC / Windows
 Application : Orange HRW (web)
 URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
 
@@ -45,151 +62,34 @@ Utilisateur Invalide: Admin/ MDP: test1234
 
 L'utilisateur doit obligatoirement pouvoir se connecter pour accéder à la plateforme
 
-### Exigence 2 : Gestion des employés
-
-L'utilisateur doit pouvoir ajouter ou modifier les infos d'un employé dans le système ( fonctionnalité essentielle)
-
-### Exigence 3 : Déconnexion
+### Exigence 2 : Déconnexion
 
 L'utilisateur doit avoir la capacité de se deconnecter de sa session.
 
-### Exigence 4 : Changement de mot de passe
+### Exigence 3 : Changement de mot de passe
 
 L'utilisateur doit être en mesure de changer de mot de passe.
 
+### Exigence 4 : Gestion des employés
+
+L'utilisateur doit pouvoir consulter, ajouter ou modifier les infos d'un employé dans le système ( fonctionnalité essentielle)
+
 ## 3.1 Analyse de risque
+
+Lien vers le tableau d'analyse des risques :
+https://docs.google.com/spreadsheets/d/1IX6nz7wv9Gp56OftJH3X_wgDk9FWdVnpERDtTqERsms/edit?gid=0#gid=0
+
+## 3.2 Effort de test
+
+Lien vers le tableau d'analyse des risques :
+https://docs.google.com/spreadsheets/d/1IX6nz7wv9Gp56OftJH3X_wgDk9FWdVnpERDtTqERsms/edit?gid=2003534584#gid=2003534584
 
 ## 4 Cas de Test
 
-### 1 Cas de test 1 - Login de connexion valide
+Lien vers le tableau des cas de test :
+https://docs.google.com/spreadsheets/d/1NkOJtQMJezCimVeCaV2viQrUbwivRU5jVwj4Epe5khI/edit?gid=1327097477#gid=1327097477
 
-#### ID: TC_LOGIN_01
+## Matrice de couverture des risques
 
-Exigence liée: Authentification
-
-Description: vérifier qu'un utilisateur avec un identifiant et un mot de passe valide peut se connecter
-Préconfitions : L'utilisateur a déjà un compte existant
-Etapes :
-
-1. Accéder à la page login
-2. Username: saisir "Admin"
-3. Passeword: saisir "admin123"
-
-Résultat attendu:
-
-- Redirection vers le dashboard
-- Affichage des sous onglets
-- Affichage du profil utilsateur
-
-### Cas de test 2 - Login de connexion invalide
-
-#### ID: TC_LOGIN_02
-
-Exigence liée: Authentification
-Description: vérifier qu'un utilisateur avec un identifiant et un mot de passe invalide se voit refuser l'accès.
-Etapes :
-
-1. Accéder à la page login
-2. Username: saisir "Admin"
-3. Passeword: saisir "test1234"
-
-Résultat attendu:
--Message "Invalid Credentials"
--L'utilisateur reste sue la page de login
-
-### Cas de test 3 - Ajout d'un employé (cas passant)
-
-#### ID: TC_ADD_EMP_01
-
-Exigence liée: gestion des employés
-
-Description: verifier qu'on peut ajouter un employé
-préconditions : L'utilisateur est connecté
-Etapes
-
-1. Accéder à l'onglet PIM
-2. Cliquer sur l'onglet "Add"
-3. Saisir dans les champs : -first name :saisir un prénom ex : Jean
-   -Last Name:saisir un nom de famille : Peuplu
-   -ID employé: XXX
-4. Cliquer sur Save
-
-Résultat attendu:
--L'employé est créé
--Message de succès affiché
--redirection vers la fiche employé
-
-### Cas de test 4 - Ajout d'un employé avec des champs obligatoires vides (cas non passant)
-
-#### ID: TC_ADD_EMP_02
-
-Exigence liée: gestion des employés
-
-Description: verifier le refus d'ajout d'un employé sans avoir renseigné les champs obligatoires
-préconditions : L'utilisateur est connecté
-Etapes
-
-1. Accéder à l'onglet PIM
-2. Cliquer sur l'onglet "Add"
-3. Ne rien saisir dans les champs
-4. Cliquer sur Save
-
-Résultat attendu:
--Message d'erreur sur les champs obligatoires
--Pas de création de nouvel employé
-
-### Cas de test 5 - Déconnexion (cas passant)
-
-#### ID: TC_LOGOUT_01
-
-Exigence liée: deconnexion
-
-Description: verifier que l'utilisateur peut correctement se déconnecter
-préconditions : L'utilisateur est connecté
-
-Etapes
-
-1. cliquer sur l'icone utilisateur
-2. Cliquer sur logout
-
-Résultat attendu:
--redirection vers la page login
--session terminée
-
-### Cas de test 6 - Déconnexion (cas non passant)
-
-#### ID: TC_LOGOUT_02
-
-Exigence liée: deconnexion
-
-Description: verifier que l'utilisateur n'a plus accès après la déconnexion
-préconditions : L'utilisateur est connecté
-
-Etapes
-
-1. cliquer sur l'icone utilisateur
-2. Cliquer sur logout
-3. cliquer sur le bouton retour du navigateur
-
-Résultat attendu:
--redirection vers le dashboard refusé
--redirection sur la page de connexion
-
-### Cas de test 7 - Mot de passe
-
-### ID: TC_PASSWORD_01
-
-Exigence liée: changement de mot de passe
-
-Description: verifier que l'utilisateur peut changer son mot de passe
-préconditions : être connecté
-
-Etapes
-
-1. cliquer sur l'icône utilisateur
-2. aller dans "change passeword"
-3. saisir :- l'ancien mot de passe (mdp) - le nouveau mdp de son choix - saisir de nouveau le nouveau mdp
-4. valider
-
-Résultat attendu:
--message de mdp changé avec succès
+Lien vers le tableau la matrice de couverture :
+https://docs.google.com/spreadsheets/d/1NkOJtQMJezCimVeCaV2viQrUbwivRU5jVwj4Epe5khI/edit?gid=62569974#gid=62569974
