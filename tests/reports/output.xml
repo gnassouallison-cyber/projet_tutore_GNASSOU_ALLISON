@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.9.6 on darwin)" generated="2026-03-26T13:42:10.196869" rpa="false" schemaversion="5">
+<suite id="s1" name="Suites" source="/Users/allisongnassou/Documents/Projet_tutore_GNASSOU_ALLISON/tests/suites">
+<suite id="s1-s1" name="Test Auth" source="/Users/allisongnassou/Documents/Projet_tutore_GNASSOU_ALLISON/tests/suites/test_auth.robot">
+<test id="s1-s1-t1" name="CT-01-01 Connexion Avec Identifiants Valides" line="12">
+<kw name="Open Browser And Go To Login" owner="keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-03-26T13:42:10.345311" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>${BASE_URL}/auth/login</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-03-26T13:42:10.345106" elapsed="8.688028"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-03-26T13:42:19.037657" elapsed="0.319591"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2026-03-26T13:42:19.357447" elapsed="0.001653"/>
+</kw>
+<status status="PASS" start="2026-03-26T13:42:10.344625" elapsed="9.014594"/>
+</kw>
+<kw name="Login With Valid Credentials" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-26T13:42:19.360450" level="INFO">Typing text 'Admin' into text field 'name:username'.</msg>
+<arg>name:username</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T13:42:19.359898" elapsed="0.884543"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-26T13:42:20.244815" level="INFO">Typing text 'admin123' into text field 'name:password'.</msg>
+<arg>name:password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T13:42:20.244608" elapsed="0.058156"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-03-26T13:42:20.303273" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>xpath=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T13:42:20.302940" elapsed="1.908588"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//h6[contains(@class,'oxd-topbar-header-breadcrumb-module')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-26T13:42:22.211942" elapsed="0.636214"/>
+</kw>
+<status status="PASS" start="2026-03-26T13:42:19.359606" elapsed="3.488673"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2026-03-26T13:42:22.850757" level="INFO">Page title is 'OrangeHRM'.</msg>
+<arg>OrangeHRM</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2026-03-26T13:42:22.848448" elapsed="0.002398"/>
+</kw>
+<kw name="Close Test Browser" owner="keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-03-26T13:42:22.851663" elapsed="0.078590"/>
+</kw>
+<status status="PASS" start="2026-03-26T13:42:22.851379" elapsed="0.078992"/>
+</kw>
+<doc>Vérifie qu'un utilisateur peut se connecter avec Admin/admin123
+et être redirigé vers le Dashboard.</doc>
+<tag>authentification</tag>
+<tag>automatise</tag>
+<tag>EXG-01</tag>
+<tag>haute-priorite</tag>
+<status status="PASS" start="2026-03-26T13:42:10.344051" elapsed="12.586424"/>
+</test>
+<test id="s1-s1-t2" name="CT-01-05 Déconnexion Utilisateur" line="19">
+<kw name="Open Browser And Go To Login" owner="keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-03-26T13:42:22.931677" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>${BASE_URL}/auth/login</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-03-26T13:42:22.931484" elapsed="2.373796"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-03-26T13:42:25.307332" elapsed="1.592474"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2026-03-26T13:42:26.899970" elapsed="0.000868"/>
+</kw>
+<status status="PASS" start="2026-03-26T13:42:22.931269" elapsed="3.969653"/>
+</kw>
+<kw name="Login With Valid Credentials" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-26T13:42:26.901705" level="INFO">Typing text 'Admin' into text field 'name:username'.</msg>
+<arg>name:username</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T13:42:26.901462" elapsed="0.753318"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-26T13:42:27.655884" level="INFO">Typing text 'admin123' into text field 'name:password'.</msg>
+<arg>name:password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T13:42:27.655437" elapsed="0.047181"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-03-26T13:42:27.702929" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>xpath=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T13:42:27.702768" elapsed="2.286535"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//h6[contains(@class,'oxd-topbar-header-breadcrumb-module')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-26T13:42:29.989581" elapsed="0.450655"/>
+</kw>
+<status status="PASS" start="2026-03-26T13:42:26.901193" elapsed="3.539191"/>
+</kw>
+<kw name="Logout" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-26T13:42:30.441267" level="INFO">Clicking element 'xpath=//span[@class='oxd-userdropdown-tab']'.</msg>
+<arg>xpath=//span[@class='oxd-userdropdown-tab']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T13:42:30.441047" elapsed="0.044057"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//a[text()='Logout']</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-26T13:42:30.485265" elapsed="0.222046"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-26T13:42:30.707809" level="INFO">Clicking element 'xpath=//a[text()='Logout']'.</msg>
+<arg>xpath=//a[text()='Logout']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T13:42:30.707534" elapsed="3.070032"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name:username</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-26T13:42:33.777861" elapsed="0.830367"/>
+</kw>
+<status status="PASS" start="2026-03-26T13:42:30.440721" elapsed="4.167626"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-03-26T13:42:34.615728" level="INFO">Element 'name:username' is displayed.</msg>
+<arg>name:username</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-26T13:42:34.608541" elapsed="0.007281"/>
+</kw>
+<kw name="Close Test Browser" owner="keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-03-26T13:42:34.616622" elapsed="0.090323"/>
+</kw>
+<status status="PASS" start="2026-03-26T13:42:34.616358" elapsed="0.090709"/>
+</kw>
+<doc>Vérifie que l'utilisateur peut se déconnecter
+et est redirigé vers la page de login.</doc>
+<tag>authentification</tag>
+<tag>automatise</tag>
+<tag>EXG-01</tag>
+<tag>haute-priorite</tag>
+<status status="PASS" start="2026-03-26T13:42:22.930794" elapsed="11.776413"/>
+</test>
+<doc>Suite de tests – Module Authentification et Gestion de sessions
+Application : Orange HRM
+Exigences couvertes : EXG-01, EXG-02
+Cas de test : CT-01-01, CT-01-05</doc>
+<status status="PASS" start="2026-03-26T13:42:10.217147" elapsed="24.490693"/>
+</suite>
+<status status="PASS" start="2026-03-26T13:42:10.197820" elapsed="24.510609"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">authentification</stat>
+<stat pass="2" fail="0" skip="0">automatise</stat>
+<stat pass="2" fail="0" skip="0">EXG-01</stat>
+<stat pass="2" fail="0" skip="0">haute-priorite</stat>
+</tag>
+<suite>
+<stat name="Suites" id="s1" pass="2" fail="0" skip="0">Suites</stat>
+<stat name="Test Auth" id="s1-s1" pass="2" fail="0" skip="0">Suites.Test Auth</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

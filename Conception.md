@@ -54,7 +54,7 @@ URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
 ### 2.4 Données de Test utilisées
 
 Utilisateur valide: Admin/ MDP: Admin123
-Utilisateur Invalide: Admin/ MDP: test1234
+Utilisateur : Admin/ MDP: test1234
 
 ## 3 Exigences fonctionnelles
 
@@ -83,6 +83,12 @@ https://docs.google.com/spreadsheets/d/1IX6nz7wv9Gp56OftJH3X_wgDk9FWdVnpERDtTqER
 
 Lien vers le tableau d'analyse des risques :
 https://docs.google.com/spreadsheets/d/1IX6nz7wv9Gp56OftJH3X_wgDk9FWdVnpERDtTqERsms/edit?gid=2003534584#gid=2003534584
+
+## 3.3 DoR et DoD
+
+Les DoR et DoD permettent de s’assurer que les exigences sont bien définies et que les fonctionnalités sont correctement testées et validées.
+
+https://docs.google.com/spreadsheets/d/1Wkq-CsPVFNnJ1TkkTwZ8w0VIcXCydQVPjaCkoioHucU/edit?usp=sharing
 
 ## 4 Cas de Test
 

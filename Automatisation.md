@@ -60,5 +60,61 @@ URL de base, navigateur, identifiants, timeout
 
 #### Keywords communs :
 
-Open Browser And Go To Login – Ouvre le navigateur et navigue vers la page de
-login
+- Open Browser And Go To Login – Ouvre le navigateur et navigue vers la page de
+  login
+
+- Login With Valid Credentials – Effectue la connexion avec les identifiants admin
+- Logout – Effectue la déconnexion via le menu utilisateur
+- Close Test Browser – Ferme le navigateur à la fin du test
+
+# 4. Suites de test
+
+Chaque fichier suite couvre un module fonctionnel de l'application :
+
+test_auth.robot // module authentification
+test_employee.robot // module gestion des employés
+test_dashboard.robot // module Dashboard
+
+Pour garantir l'isolation de chaque tests, ont émis en place :
+
+### Test Setup
+
+actions executées avant chaque test :
+
+- ouvrir le navigateur
+
+### Test Teardown
+
+actions executées après chaque test :
+
+- fermer le navigateur
+
+# 5. Modalités d’exécution
+
+#### Lancer tous les tests
+
+robot --outputdir reports tests/suites/
+
+#### Lancer une suite spécifique
+
+robot --outputdir reports tests/suites/test_auth.robot
+
+# 6. Rapports générés
+
+Après exécution, Robot Framework génère automatiquement dans le dossier: reports/ :
+
+report.html : rapport visuel interactif
+log.html : journal d'execution détaillé
+output.xml export brut uilisable par des outils CI/CD
+
+# 7. Cas de test automatisés
+
+| ID            | Description                              | Priorité | Statut |               Module |
+| ------------- | ---------------------------------------- | :------: | :----: | -------------------: |
+| TC_LOGIN_01   | Login valide – accès accordé             |  Haute   |  PASS  |     Authentification |
+| TC_LOGIN_02   | Login invalide – accès refusé            |  Haute   |  PASS  |     Authentification |
+| TC_ADD_EMP_01 | Ajout employé                            |  Haute   |  PASS  | Gestion des employés |
+| TC_ADD_EMP_02 | Ajout employé -champs obligatoires vides |  Haute   |  PASS  | Gestion des employés |
+| TC_LOGOUT_01  | Déconnexion                              | Moyenne  |  PASS  |          Déconnexion |
+
+Les autres cas de test ont été exécutés manuellement conformément au sujet N°1.
