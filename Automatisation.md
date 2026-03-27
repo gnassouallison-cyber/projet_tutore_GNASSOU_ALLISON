@@ -63,9 +63,9 @@ projet_tutore/
 
 ## 3. Organisation du code
 
-### 3.1 Fichier de ressources partagées – keywords.resource
+### 3.1 Fichier de ressources partagées – .resource
 
-Ce fichier centralise les éléments réutilisables par toutes les suites :
+Ces fichiers centralisent les éléments réutilisables par toutes les suites :
 
 #### Variables globales :
 
@@ -79,13 +79,18 @@ URL de base, navigateur, identifiants, timeout
 - Login With Valid Credentials – Effectue la connexion avec les identifiants admin
 - Logout – Effectue la déconnexion via le menu utilisateur
 - Close Test Browser – Ferme le navigateur à la fin du test
+- Naviguer Vers La Liste Des Employés
+- Accéder Au Formulaire Ajout Employé
+- Remplir Et Soumettre Le Formulaire
 
 # 4. Suites de test
 
 Chaque fichier suite couvre un module fonctionnel de l'application :
 
+```text
 test_auth.robot // module authentification
 test_employee.robot // module gestion des employés
+```
 
 Pour garantir l'isolation de chaque tests, ont émis en place :
 
@@ -105,11 +110,15 @@ actions executées après chaque test :
 
 #### Lancer tous les tests
 
+```text
 robot --outputdir reports tests/suites/
+```
 
 #### Lancer une suite spécifique
 
+```text
 robot --outputdir reports tests/suites/test_auth.robot
+```
 
 # 6. Rapports générés
 
