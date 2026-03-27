@@ -25,20 +25,20 @@ python -m venv venv
 source venv/bin/activate # Linux/macOS
 ```
 
-### 2.2 1Installer les dépendances
+### 2.1. Installer les dépendances
 
 ```text
 pip install robotframework
 pip install robotframework-seleniumlibrary
 ```
 
-### 2.3. Installer le pilote Chrome
+### 2.2. Installer le pilote Chrome
 
 ```text
 pip install webdriver-manager
 ```
 
-### 2.4. Vérifier l'installation
+### 2.3. Vérifier l'installation
 
 ```text
 robot --version
