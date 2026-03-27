@@ -10,29 +10,39 @@ lisible même pour des profils non-développeurs.
 
 Robot Framework s'appuie sur la librairie SeleniumLibrairy pour interargir avec les navigateurs web qui elle même s'apppuie sur Selenium Webdriver.
 
+```text
 Composant : Python - version ≥ 3.9
 Robot Framework: version ≥ 6.0
 SeleniumLibrary: version ≥ 6.0
 ChromeDriver: Compatible avec Chrome installé
 Navigateur: Google Chrome
+```
 
 ## 2. Créer un environnement virtuel
 
+```text
 python -m venv venv
 source venv/bin/activate # Linux/macOS
+```
 
 ### 2.2 1Installer les dépendances
 
+```text
 pip install robotframework
 pip install robotframework-seleniumlibrary
+```
 
 ### 2.3. Installer le pilote Chrome
 
+```text
 pip install webdriver-manager
+```
 
 ### 2.4. Vérifier l'installation
 
+```text
 robot --version
+```
 
 ```text
 projet_tutore/
