@@ -34,19 +34,22 @@ pip install webdriver-manager
 
 robot --version
 
+```text
 projet_tutore/
 │
-├── Conception.md # fichier de conception
-├── Automatisation.md # fichier d'automatisation
-├── Execution.md # Rapport d'exécution manuelle
+├── Conception.md        # fichier de conception
+├── Automatisation.md    # fichier d'automatisation
+├── Execution.md         # rapport d'exécution manuelle
 │
 └── tests/
-├── resources/
-│ └── keywords.resource # Keywords et variables communes
-└── suites/
-├── test_auth.robot # Tests authentification (CT-01-01, CT-01-05)
-├── test_employee.robot
-└── test_dashboard.robot
+    ├── resources/
+    │   ├── login_page.resource
+    │   └── employee_page.resource
+    │
+    └── suites/
+        ├── test_auth.robot
+        └── test_employee.robot
+```
 
 ## 3. Organisation du code
 
@@ -73,7 +76,6 @@ Chaque fichier suite couvre un module fonctionnel de l'application :
 
 test_auth.robot // module authentification
 test_employee.robot // module gestion des employés
-test_dashboard.robot // module Dashboard
 
 Pour garantir l'isolation de chaque tests, ont émis en place :
 

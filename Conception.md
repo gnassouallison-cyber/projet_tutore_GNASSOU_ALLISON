@@ -23,7 +23,7 @@ L'objectif est dans un premier temps de définir les fonctionnalités qui devron
 
 Le module Authentification et gestion de session : ce module couvre la connexion à l’application, la déconnexion et le changement de mot de passe. il conditionne l'accès à toute l'application. Une defaillance à ce niveau pourrait compromettre la sécurité globale ou empêcher les utilisateurs concernées d'y accéder.
 
-Le module de gestion des employés (fonctionnalité principale): doit être testé de façon car il permet la création , la modification(..) des informations liées aux employés afin de garantir la fiabilité des données et le bon fonctionnement de l'application web.
+Le module de gestion des employés (fonctionnalité principale): doit être testé car il permet la création , la modification(..) des informations liées aux employés afin de garantir la fiabilité des données et le bon fonctionnement de l'application web.
 
 ## Hors Périmètre
 
@@ -47,7 +47,7 @@ Nous ferons des tests systèmes qui consisteront à tester l'application comme u
 ### 2.3 L'Environnement de Test
 
 Navigateur : Google Chrome
-OS : MAC / Windows
+OS : MAC
 Application : Orange HRW (web)
 URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
 
@@ -55,6 +55,7 @@ URL : https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
 
 Utilisateur valide: Admin/ MDP: Admin123
 Utilisateur : Admin/ MDP: test1234
+Nouvel Employé : FirstName : Jean /Last Name : Peuplu
 
 ## 3 Exigences fonctionnelles
 

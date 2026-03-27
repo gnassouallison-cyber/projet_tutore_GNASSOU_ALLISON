@@ -109,5 +109,3 @@ Session invalidée côté client et serveur
 
 L'utilisateur accède de nouveau au dashboard via le bouton retour
 La session semble toujours active côté navigateur
-
-# Conclusion

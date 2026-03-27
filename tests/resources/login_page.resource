@@ -7,6 +7,9 @@ ${BROWSER}        chrome
 ${USERNAME}       Admin
 ${PASSWORD}       admin123
 ${TIMEOUT}        10s
+${PASSWORD_2}       test1234
+
+
 
 *** Keywords ***
 Open Browser And Go To Login
@@ -19,6 +22,13 @@ Login With Valid Credentials
     Input Text    name:password    ${PASSWORD}
     Click Button    xpath=//button[@type='submit']
     Wait Until Element Is Visible    xpath=//h6[contains(@class,'oxd-topbar-header-breadcrumb-module')]    ${TIMEOUT}
+
+Login With Invalid Credentials
+    Input Text    name:username    ${USERNAME}
+    Input Text    name:password    ${PASSWORD_2}
+    Click Button    xpath=//button[@type='submit']
+    Wait Until Element Is Visible    xpath=//div[contains(@class,'oxd-alert-content')]    ${TIMEOUT}
+
 
 Logout
     Click Element    xpath=//span[@class='oxd-userdropdown-tab']
